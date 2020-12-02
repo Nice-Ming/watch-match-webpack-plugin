@@ -8,7 +8,7 @@ const defaultOptions = {
   callback: noop,
 }
 
-class MatchWatchWebpackPlugin {
+class WatchMatchWebpackPlugin {
   constructor(options) {
     let { includes, callback } = {
       ...defaultOptions,
@@ -24,7 +24,7 @@ class MatchWatchWebpackPlugin {
 
   apply(compiler) {
     compiler.hooks.watchRun.tapAsync(
-      'MatchWatchWebpackPlugin',
+      'WatchMatchWebpackPlugin',
       async (compilation, callback) => {
         const changedFiles = Object.keys(
           compilation.watchFileSystem.watcher.mtimes
@@ -41,4 +41,4 @@ class MatchWatchWebpackPlugin {
   }
 }
 
-module.exports = MatchWatchWebpackPlugin
+module.exports = WatchMatchWebpackPlugin
