@@ -1,0 +1,19 @@
+{
+  "name": "watch-match-webpack-plugin",
+  "version": "0.1.0",
+  "description": "A Webpack plugin to invoke callback when file changed.",
+  "main": "index.js",
+  "keywords": [
+    "webpack",
+    "plugin",
+    "watch",
+    "match"
+  ],
+  "author": {
+    "email": "laisiming@xiaomi.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "anymatch": "^3.1.1"
+  }
+}
