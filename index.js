@@ -5,19 +5,16 @@ const noop = () => {}
 const arrify = (item) => (Array.isArray(item) ? item : [item])
 const defaultOptions = {
   includes: '**/*',
-  callback: noop,
+  callback: noop
 }
 
 class WatchMatchWebpackPlugin {
   constructor(options) {
     let { includes, callback } = {
       ...defaultOptions,
-      ...options,
+      ...options
     }
-
-    includes = arrify(options.includes)
-    const matchers = includes.map((include) => path.resolve(root, include))
-
+    const matchers = arrify(options.includes)
     this.matcher = anymatch(matchers)
     this.callback = callback
   }
